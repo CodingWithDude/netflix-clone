@@ -40,7 +40,7 @@ const Home = ({
       <Header />
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16 ">
         <Banner netflixOriginals={netflixOriginals} />
-        <section className="md:space-y-24">
+        <section className="md:space-y-4">
           <Row
             title="Trending Now"
             movies={trendingNow}
@@ -50,14 +50,14 @@ const Home = ({
             movies={topRated}
           />
           <Row
-            title="Action Thrillers"
+            title="Action"
             movies={actionMovies}
           />
           {/* My List */}
           {/* {list.length > 0 && <Row title="My List" movies={list} />} */}
 
           <Row
-            title="Comedies"
+            title="Comedy"
             movies={comedyMovies}
           />
           <Row

@@ -32,11 +32,11 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="flex items-center space-x-4 text-sm font-light">
-        <MagnifyingGlassIcon className="hidden sm:inline h-6 w-6" />
-        <p className="hidden lg:inline font-semibold">Kids</p>
-        <BellIcon className="h-6 w-6" />
-        <Link href="/account">
+      <div className="flex items-center space-x-4 font-semibold">
+        <MagnifyingGlassIcon className="hidden cursor-pointer sm:inline h-6 w-6" />
+        <p className="hidden cursor-pointer lg:inline">Kids</p>
+        <BellIcon className="cursor-pointer h-6 w-6" />
+        <Link href="/">
           <img
             src="https://rb.gy/g1pwyx"
             alt="user profile icon image"
