@@ -19,8 +19,8 @@ const Header = () => {
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           alt="Netflix Logo"
-          width={100}
-          height={100}
+          width={125}
+          height={125}
           className="cursor-pointer object-contain"
         />
         <ul className="hidden space-x-4 md:flex">
@@ -34,7 +34,7 @@ const Header = () => {
 
       <div className="flex items-center space-x-4 text-sm font-light">
         <MagnifyingGlassIcon className="hidden sm:inline h-6 w-6" />
-        <p className="hidden lg:inline">Kids</p>
+        <p className="hidden lg:inline font-semibold">Kids</p>
         <BellIcon className="h-6 w-6" />
         <Link href="/account">
           <img
