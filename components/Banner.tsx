@@ -16,8 +16,6 @@ const Banner = ({ netflixOriginals }: Props) => {
     );
   }, [netflixOriginals]);
 
-  console.log(movie);
-
   return (
     <div>
       <div className="absolute top-0 left-0 h-[95vh] w-screen">
