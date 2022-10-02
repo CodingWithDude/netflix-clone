@@ -12,21 +12,49 @@ interface Props {
   trendingNow: Movie[];
   topRated: Movie[];
   actionMovies: Movie[];
+  adventureMovies: Movie[];
+  animationMovies: Movie[];
   comedyMovies: Movie[];
-  horrorMovies: Movie[];
-  romanceMovies: Movie[];
+  crimeMovies: Movie[];
   documentaries: Movie[];
+  dramaMovies: Movie[];
+  familyMovies: Movie[];
+  fantasyMovies: Movie[];
+  historyMovies: Movie[];
+  horrorMovies: Movie[];
+  musicMovies: Movie[];
+  mysteryMovies: Movie[];
+  romanceMovies: Movie[];
+  sciFiMovies: Movie[];
+  tvMovies: Movie[];
+  thrillerMovies: Movie[];
+  warMovies: Movie[];
+  westernMovies: Movie[];
 }
 
 const Home = ({
   netflixOriginals,
-  actionMovies,
-  comedyMovies,
-  documentaries,
-  horrorMovies,
-  romanceMovies,
-  topRated,
   trendingNow,
+  topRated,
+  actionMovies,
+  adventureMovies,
+  animationMovies,
+  comedyMovies,
+  crimeMovies,
+  documentaries,
+  dramaMovies,
+  familyMovies,
+  fantasyMovies,
+  historyMovies,
+  horrorMovies,
+  musicMovies,
+  mysteryMovies,
+  romanceMovies,
+  sciFiMovies,
+  tvMovies,
+  thrillerMovies,
+  warMovies,
+  westernMovies,
 }: Props) => {
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to=[#010511] lg:h-[140vh] ">
@@ -55,22 +83,77 @@ const Home = ({
           />
           {/* My List */}
           {/* {list.length > 0 && <Row title="My List" movies={list} />} */}
-
+          <Row
+            title="Adventure"
+            movies={adventureMovies}
+          />
+          <Row
+            title="Animation"
+            movies={animationMovies}
+          />
           <Row
             title="Comedy"
             movies={comedyMovies}
+          />
+          <Row
+            title="Crime"
+            movies={crimeMovies}
+          />
+          <Row
+            title="Documentaries"
+            movies={documentaries}
+          />
+          <Row
+            title="Drama"
+            movies={dramaMovies}
+          />
+          <Row
+            title="Family"
+            movies={familyMovies}
+          />
+          <Row
+            title="Fantasy"
+            movies={fantasyMovies}
+          />
+          <Row
+            title="History"
+            movies={historyMovies}
           />
           <Row
             title="Scary Movies"
             movies={horrorMovies}
           />
           <Row
-            title="Romance Movies"
+            title="Music"
+            movies={musicMovies}
+          />
+          <Row
+            title="Mystery"
+            movies={mysteryMovies}
+          />
+          <Row
+            title="Romance"
             movies={romanceMovies}
           />
           <Row
-            title="Documentaries"
-            movies={documentaries}
+            title="Sci-Fi"
+            movies={sciFiMovies}
+          />
+          <Row
+            title="TV Movies"
+            movies={tvMovies}
+          />
+          <Row
+            title="Thrillers"
+            movies={thrillerMovies}
+          />
+          <Row
+            title="War"
+            movies={warMovies}
+          />
+          <Row
+            title="Western"
+            movies={westernMovies}
           />
         </section>
       </main>
@@ -87,19 +170,47 @@ export const getServerSideProps = async () => {
     trendingNow,
     topRated,
     actionMovies,
+    adventureMovies,
+    animationMovies,
     comedyMovies,
-    horrorMovies,
-    romanceMovies,
+    crimeMovies,
     documentaries,
+    dramaMovies,
+    familyMovies,
+    fantasyMovies,
+    historyMovies,
+    horrorMovies,
+    musicMovies,
+    mysteryMovies,
+    romanceMovies,
+    sciFiMovies,
+    tvMovies,
+    thrillerMovies,
+    warMovies,
+    westernMovies,
   ] = await Promise.all([
     fetch(requests.fetchNetflixOriginals).then((res) => res.json()),
     fetch(requests.fetchTrending).then((res) => res.json()),
     fetch(requests.fetchTopRated).then((res) => res.json()),
     fetch(requests.fetchActionMovies).then((res) => res.json()),
+    fetch(requests.fetchAdventureMovies).then((res) => res.json()),
+    fetch(requests.fetchAnimationMovies).then((res) => res.json()),
     fetch(requests.fetchComedyMovies).then((res) => res.json()),
-    fetch(requests.fetchHorrorMovies).then((res) => res.json()),
-    fetch(requests.fetchRomanceMovies).then((res) => res.json()),
+    fetch(requests.fetchCrimeMovies).then((res) => res.json()),
     fetch(requests.fetchDocumentaries).then((res) => res.json()),
+    fetch(requests.fetchDramaMovies).then((res) => res.json()),
+    fetch(requests.fetchFamilyMovies).then((res) => res.json()),
+    fetch(requests.fetchFantasyMovies).then((res) => res.json()),
+    fetch(requests.fetchHistoryMovies).then((res) => res.json()),
+    fetch(requests.fetchHorrorMovies).then((res) => res.json()),
+    fetch(requests.fetchMusicMovies).then((res) => res.json()),
+    fetch(requests.fetchMysteryMovies).then((res) => res.json()),
+    fetch(requests.fetchRomanceMovies).then((res) => res.json()),
+    fetch(requests.fetchSciFiMovies).then((res) => res.json()),
+    fetch(requests.fetchTvMovies).then((res) => res.json()),
+    fetch(requests.fetchThrillerMovies).then((res) => res.json()),
+    fetch(requests.fetchWarMovies).then((res) => res.json()),
+    fetch(requests.fetchWesternMovies).then((res) => res.json()),
   ]);
 
   return {
@@ -108,10 +219,24 @@ export const getServerSideProps = async () => {
       trendingNow: trendingNow.results,
       topRated: topRated.results,
       actionMovies: actionMovies.results,
+      adventureMovies: adventureMovies.results,
+      animationMovies: animationMovies.results,
       comedyMovies: comedyMovies.results,
-      horrorMovies: horrorMovies.results,
-      romanceMovies: romanceMovies.results,
+      crimeMovies: crimeMovies.results,
       documentaries: documentaries.results,
+      dramaMovies: dramaMovies.results,
+      familyMovies: familyMovies.results,
+      fantasyMovies: fantasyMovies.results,
+      historyMovies: historyMovies.results,
+      horrorMovies: horrorMovies.results,
+      musicMovies: musicMovies.results,
+      mysteryMovies: mysteryMovies.results,
+      romanceMovies: romanceMovies.results,
+      sciFiMovies: sciFiMovies.results,
+      tvMovies: tvMovies.results,
+      thrillerMovies: thrillerMovies.results,
+      warMovies: warMovies.results,
+      westernMovies: westernMovies.results,
     },
   };
 };
